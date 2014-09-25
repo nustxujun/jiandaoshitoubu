@@ -1,0 +1,14 @@
+[property]
+Ò°ÖíÍõ
+200
+100
+10
+10
+10
+1
+100
+[/property]
+
+[skill]
+attack
+[/skill]

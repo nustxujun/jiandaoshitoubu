@@ -1,0 +1,12 @@
+[property]
+new
+100
+10
+10
+10
+10
+[/property]
+
+[skill]
+attack
+[/skill]

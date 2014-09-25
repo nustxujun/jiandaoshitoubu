@@ -1,0 +1,17 @@
+﻿生成启动时间为 2014/7/9 22:40:46。
+     1>项目“E:\project\jiandaoshitoubu\LuaRegister\test\demo\lua_register_test\lua_register_test.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IE:\project\jiandaoshitoubu\lua\src /I../../../include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt lua_register_test.cpp
+         lua_register_test.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../../../bin\lua_register_test.exe" /INCREMENTAL /NOLOGO /LIBPATH:E:\project\jiandaoshitoubu\LuaRegister\test\demo\Debug lua.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../../../bin\lua_register_test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../../../bin\lua_register_test.lib" /MACHINE:X86 Debug\lua_register_test.obj
+         Debug\stdafx.obj
+         lua_register_test.vcxproj -> E:\project\jiandaoshitoubu\LuaRegister\test\demo\lua_register_test\../../../bin\lua_register_test.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"../../../bin\lua_register_test.bsc" /n Debug\lua_register_test.sbr Debug\stdafx.sbr
+     1>已完成生成项目“E:\project\jiandaoshitoubu\LuaRegister\test\demo\lua_register_test\lua_register_test.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.72

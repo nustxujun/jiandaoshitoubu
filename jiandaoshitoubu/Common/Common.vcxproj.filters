@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{fcf612b7-00e4-4b56-b561-1adb62d2c86a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaRegister">
+      <UniqueIdentifier>{edc82f6d-9485-4678-bb4d-88768ef98429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{971b6506-8763-4684-8847-afb8ca704dc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{fe515537-3b85-4a02-b0c1-c8769ac34439}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommonFile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="FindFile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Socket.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillInstance.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillContainer.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillTrigger.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonFile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="FindFile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IteratorWrapper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\call.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\class.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\config.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\converter.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\converter.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\dispatcher.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\function.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\traits.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\error.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\execute.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\iterator.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\lua_reg.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\module.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\reference.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\state.hpp">
+      <Filter>LuaRegister</Filter>
+    </ClInclude>
+    <ClInclude Include="Socket.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStream.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBuffer.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Buff.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Property.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillContainer.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillInstance.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityDataSerializer.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Callback.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillShell.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillResult.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillTrigger.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaTypeConvertion.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

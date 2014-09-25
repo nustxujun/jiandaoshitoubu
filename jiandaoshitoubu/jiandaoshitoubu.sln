@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jiandaoshitoubu", "jiandaoshitoubu.vcxproj", "{2D7A0B3D-0B34-40AD-BF26-A19DC17C1065}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43927552-8580-4016-84B6-44E2AE13CAB2} = {43927552-8580-4016-84B6-44E2AE13CAB2}
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3} = {BE0616DA-192A-4F47-A9B1-30D19C630EC3}
+		{9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629} = {9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\lua.vcxproj", "{43927552-8580-4016-84B6-44E2AE13CAB2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\Server.vcxproj", "{9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43927552-8580-4016-84B6-44E2AE13CAB2} = {43927552-8580-4016-84B6-44E2AE13CAB2}
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3} = {BE0616DA-192A-4F47-A9B1-30D19C630EC3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Common\Common.vcxproj", "{BE0616DA-192A-4F47-A9B1-30D19C630EC3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43927552-8580-4016-84B6-44E2AE13CAB2} = {43927552-8580-4016-84B6-44E2AE13CAB2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArchiveMaker", "ArchiveMaker\ArchiveMaker.vcxproj", "{8EAA8D85-2B5D-4AC7-A54F-55C75047F654}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3} = {BE0616DA-192A-4F47-A9B1-30D19C630EC3}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{49E368F9-D71A-4B6A-AAE8-E17F7D96D443}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D7A0B3D-0B34-40AD-BF26-A19DC17C1065}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2D7A0B3D-0B34-40AD-BF26-A19DC17C1065}.Debug|Win32.Build.0 = Debug|Win32
+		{2D7A0B3D-0B34-40AD-BF26-A19DC17C1065}.Release|Win32.ActiveCfg = Release|Win32
+		{2D7A0B3D-0B34-40AD-BF26-A19DC17C1065}.Release|Win32.Build.0 = Release|Win32
+		{43927552-8580-4016-84B6-44E2AE13CAB2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43927552-8580-4016-84B6-44E2AE13CAB2}.Debug|Win32.Build.0 = Debug|Win32
+		{43927552-8580-4016-84B6-44E2AE13CAB2}.Release|Win32.ActiveCfg = Release|Win32
+		{43927552-8580-4016-84B6-44E2AE13CAB2}.Release|Win32.Build.0 = Release|Win32
+		{9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629}.Debug|Win32.Build.0 = Debug|Win32
+		{9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629}.Release|Win32.ActiveCfg = Release|Win32
+		{9AE2CFDA-A2A4-44EF-9CB6-0887A7F0C629}.Release|Win32.Build.0 = Release|Win32
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3}.Debug|Win32.Build.0 = Debug|Win32
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3}.Release|Win32.ActiveCfg = Release|Win32
+		{BE0616DA-192A-4F47-A9B1-30D19C630EC3}.Release|Win32.Build.0 = Release|Win32
+		{8EAA8D85-2B5D-4AC7-A54F-55C75047F654}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8EAA8D85-2B5D-4AC7-A54F-55C75047F654}.Debug|Win32.Build.0 = Debug|Win32
+		{8EAA8D85-2B5D-4AC7-A54F-55C75047F654}.Release|Win32.ActiveCfg = Release|Win32
+		{8EAA8D85-2B5D-4AC7-A54F-55C75047F654}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EAA8D85-2B5D-4AC7-A54F-55C75047F654} = {49E368F9-D71A-4B6A-AAE8-E17F7D96D443}
+	EndGlobalSection
+EndGlobal

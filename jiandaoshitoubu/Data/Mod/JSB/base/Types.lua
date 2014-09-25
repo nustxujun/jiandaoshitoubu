@@ -1,0 +1,16 @@
+--CastType
+CT_ATTACK = 0
+CT_HEAL = 1
+
+
+
+--TargetType
+TT_NONE = 0
+TT_SELF	= 1 
+TT_PARTNER = 2
+TT_ENEMY = 4
+TT_SINGLE =8
+TT_TEAM	=16
+
+--effectType
+SET_NORMALATTACK = 0

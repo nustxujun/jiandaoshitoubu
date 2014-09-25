@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BE0616DA-192A-4F47-A9B1-30D19C630EC3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Common</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CommonFile.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FindFile.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="SkillContainer.cpp" />
+    <ClCompile Include="SkillInstance.cpp" />
+    <ClCompile Include="SkillTrigger.cpp" />
+    <ClCompile Include="Socket.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\LuaRegister\include\lua_reg\call.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\class.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\config.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\converter.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\converter.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\dispatcher.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\function.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\details\traits.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\error.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\execute.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\iterator.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\lua_reg.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\module.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\reference.hpp" />
+    <ClInclude Include="..\LuaRegister\include\lua_reg\state.hpp" />
+    <ClInclude Include="Buff.h" />
+    <ClInclude Include="Callback.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="CommonFile.h" />
+    <ClInclude Include="DataStream.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityDataSerializer.h" />
+    <ClInclude Include="EventManager.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="FindFile.h" />
+    <ClInclude Include="IteratorWrapper.h" />
+    <ClInclude Include="LuaTypeConvertion.h" />
+    <ClInclude Include="Property.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RingBuffer.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SkillContainer.h" />
+    <ClInclude Include="SkillInstance.h" />
+    <ClInclude Include="SkillResult.h" />
+    <ClInclude Include="SkillShell.h" />
+    <ClInclude Include="SkillTrigger.h" />
+    <ClInclude Include="Socket.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
