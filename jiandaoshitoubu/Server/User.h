@@ -14,6 +14,7 @@ namespace JSB
 		friend class UserManager;
 	public:
 		User(Identity id, SOCKET sock);
+		~User();
 		void serialize(DataStream& data);
 		void unserialize(DataStream& data);
 

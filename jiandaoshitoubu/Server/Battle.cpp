@@ -7,7 +7,7 @@
 #include "SceneNode.h"
 using namespace JSB;
 
-Battle::Battle(SceneNode* node) :mNode(node)
+Battle::Battle(SceneNode* node) : Scene(node), mMonster(node)
 {
 	
 }
@@ -38,7 +38,7 @@ void Battle::update(float elapsedTime)
 	switch (mState)
 	{
 	case WAIT:
-		if (mNode->getUserCount() != 0)
+		if (getNode()->getUserCount() != 0)
 			mState = BEGIN;
 		break;
 	case BEGIN:
@@ -72,10 +72,10 @@ void Battle::action(float elapsedTime)
 
 	Environment env;
 	env.addSide2(&mMonster);
-	for (auto i : mNode->getUsers())
+	for (auto i : getNode()->getUsers())
 		env.addSide1(i);
 	size_t diecount = 0;
-	for (auto i : mNode->getUsers())
+	for (auto i : getNode()->getUsers())
 	{
 		ServerEntity& p = *i;
 		env.setVisitor(&p);
@@ -131,7 +131,7 @@ void Battle::action(float elapsedTime)
 	//}
 
 	if (mMonster.getProperty().hp <= 0 || 
-		mNode->getUserCount() == 0 || 
+		getNode()->getUserCount() == 0 || 
 		diecount == env.getPartenerCount())
 		mState = END;
 
@@ -174,7 +174,7 @@ void Battle::afterbattle()
 	int exp = mMonster.getProperty().exp;
 	String name = mMonster.getProperty().name;
 	bool win = mMonster.getProperty().hp == 0;
-	for (auto i : mNode->getUsers())
+	for (auto i : getNode()->getUsers())
 	{
 		Property& prop = i->getPropertyRef();
 		if (win)

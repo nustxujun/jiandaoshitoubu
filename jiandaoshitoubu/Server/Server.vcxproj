@@ -82,6 +82,7 @@
     <ClInclude Include="Environment.h" />
     <ClInclude Include="Mod.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneNode.h" />
     <ClInclude Include="Server.h" />
     <ClInclude Include="ServerEntity.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="Environment.cpp" />
     <ClCompile Include="Mod.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="ServerEntity.cpp" />

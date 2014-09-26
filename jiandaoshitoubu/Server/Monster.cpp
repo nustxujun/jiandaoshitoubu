@@ -5,10 +5,11 @@
 #include "SkillLua.h"
 #include "Triggers.h"
 #include "Environment.h"
+#include "SceneNode.h"
 
 using namespace JSB;
 
-Monster::Monster() :ServerEntity(0)
+Monster::Monster(SceneNode* node) :ServerEntity(0), mNode(node)
 {
 	Triggers::generatorTriggers(&mSkillCont);
 }
@@ -37,9 +38,13 @@ void Monster::useSkill(Environment& env)
 		}
 	}
 
-
-
 }
+
+void Monster::broadcast(DataStream& msg)
+{
+	mNode->broadcast(msg);
+}
+
 
 void Monster::hurt(SkillEffectType type, int damage)
 {
@@ -49,7 +54,7 @@ void Monster::hurt(SkillEffectType type, int damage)
 
 void MonsterFactory::add(CommonFile* file)
 {
-	Monster* m = new Monster;
+	Monster* m = new Monster(nullptr);
 	DataStream data(file->getData(), file->getSize());
 	m->unserialize(data);
 	const String& name = m->getProperty().name;

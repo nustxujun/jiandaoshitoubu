@@ -1,9 +1,10 @@
 #include "SceneNode.h"
 #include "User.h"
+#include "Scene.h"
 using namespace JSB;
 
-SceneNode::SceneNode(const String& name)
-	:mParent(0), mName(name)
+SceneNode::SceneNode()
+	:mParent(0), mScene(0)
 {
 }
 
@@ -11,8 +12,9 @@ SceneNode::~SceneNode()
 {
 	for (auto& i : mChildren)
 	{
-		delete i.second;
+		delete i;
 	}
+
 }
 
 void SceneNode::attachEntity(User* u)
@@ -29,48 +31,60 @@ void SceneNode::attachEntity(User* u)
 	}
 	mUsers.push_back(u);
 	u->setSceneNode(this);
+	if (mScene)
+		mScene->attachEntityNotify(u);
 }
 
 void SceneNode::detachEntity(User* u)
 {
-	mUsers.erase(std::find(mUsers.begin(), mUsers.end(), u));
+	auto ret = std::find(mUsers.begin(), mUsers.end(), u);
+	if (ret == mUsers.end()) return;
+	
+	if (mScene)
+		mScene->detachEntityNotify(u);
+
+	mUsers.erase(ret);
 	u->setSceneNode(nullptr);
+
 }
 
-SceneNode* SceneNode::createChild(const String& name)
+void SceneNode::attachScene(Scene* scene)
 {
-	SceneNode* node = new SceneNode(name);
-	auto ret = mChildren.insert(std::make_pair(name, node));
-	if (!ret.second)
+	if (mScene != nullptr)
 	{
-		delete node;
-		JSB_EXCEPT("same scenenode name is existed.");
-		return nullptr;
+		JSB_EXCEPT("scenenode has a scene");
 	}
 
+	mScene = scene;
+}
+void SceneNode::detachScene()
+{
+	mScene = nullptr;
+}
+
+Scene* SceneNode::getScene()
+{
+	return mScene;
+}
+
+SceneNode* SceneNode::createChild()
+{
+	SceneNode* node = new SceneNode();
+	mChildren.insert(node);
 	node->mParent = this;
 
 	return node;
 
 }
 
-void SceneNode::destroyChild(const String& name)
+void SceneNode::destroyChild(SceneNode* node)
 {
-	auto ret = mChildren.find(name);
+	auto ret = mChildren.find(node);
 	if (ret == mChildren.end())
 		return;
-	delete ret->second;
+	delete node;
 	mChildren.erase(ret);
 }
-
-SceneNode* SceneNode::getChild(const String& name)
-{
-	auto ret = mChildren.find(name);
-	if (ret == mChildren.end())
-		return nullptr;
-	return ret->second;
-}
-
 
 SceneNode::Users SceneNode::getUsers()
 {
@@ -81,6 +95,12 @@ size_t SceneNode::getUserCount()const
 {
 	return mUsers.size();
 }
+
+SceneNode* SceneNode::getParent()
+{
+	return mParent;
+}
+
 
 void SceneNode::broadcast(DataStream& msg)
 {

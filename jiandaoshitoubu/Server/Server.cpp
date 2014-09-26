@@ -7,12 +7,12 @@
 #include "CommonFile.h"
 #include "SkillLua.h"
 #include "Monster.h"
+#include "Battle.h"
 
 using namespace JSB;
 
-Server::Server():
-	mSocket(Socket::DEFAULT_PORT),
-	mBattle(&mUserMgr)
+Server::Server()
+	:mSocket(Socket::DEFAULT_PORT)
 {
 	registerEvent();
 
@@ -20,7 +20,8 @@ Server::Server():
 	new MonsterFactory;
 
 	loadMod();
-	mBattle.init();
+
+	createScene("battle");
 }
 
 Server::~Server()
@@ -109,7 +110,11 @@ void Server::update()
 	static int timer = GetTickCount();
 	float elapsed = (GetTickCount() - timer) / 1000.f;
 	timer = GetTickCount();
-	mBattle.update(elapsed);
+	
+	for (auto i : mScenes)
+	{
+		i.second->update(elapsed);
+	}
 }
 
 void Server::createNewLink(Link& link, SOCKET id)
@@ -122,7 +127,10 @@ void Server::destroyLink(SOCKET id)
 {
 	auto ret = mLinks.find(id);
 	if (ret == mLinks.end()) return;
-	mUserMgr.destroyUser(ret->second.user->getID());
+
+	User* user = ret->second.user;
+	user->getSceneNode()->detachEntity(user);
+	mUserMgr.destroyUser(user->getID());
 	mLinks.erase(ret);
 
 }
@@ -157,6 +165,41 @@ void Server::broadcast(DataStream& msg, User* without)
 {
 	mUserMgr.broadcast(msg, without);
 }
+
+
+void Server::createScene(const String& name)
+{
+	if (mScenes.find(name) != mScenes.end())
+	{
+		JSB_EXCEPT("same scene is existed");
+	}
+
+	SceneNode* node = mNode.createChild();
+	Battle* b = new Battle(node);
+	b->init();
+	mScenes.insert(std::make_pair(name, b));
+}
+
+void Server::destroyScene(const String& name)
+{
+	auto ret = mScenes.find(name);
+	if (ret == mScenes.end()) return;
+
+	SceneNode* node = ret->second->getNode();
+	SceneNode* parent = node->getParent();
+	delete ret->second;
+	mScenes.erase(ret);
+
+	parent->destroyChild(node);
+}
+
+Scene* Server::getScene(const String& name)
+{
+	auto ret = mScenes.find(name);
+	if (ret == mScenes.end()) return nullptr;
+	return ret->second;
+}
+
 
 void Server::loadMod()
 {
@@ -229,6 +272,9 @@ void Server::join(Parameter& para)
 		up.user->serialize(msg);
 		broadcast(msg, up.user);
 	}
+
+	SceneNode* node = getScene("battle")->getNode();
+	node->attachEntity(up.user);
 
 }
 

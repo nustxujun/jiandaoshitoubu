@@ -4,10 +4,11 @@
 #include "Common.h"
 #include "Monster.h"
 #include "lua_reg.hpp"
+#include "Scene.h"
 
 namespace JSB
 {
-	class Battle
+	class Battle :public Scene
 	{
 	public:
 		Battle(SceneNode* root);
@@ -28,7 +29,6 @@ namespace JSB
 
 	private:
 
-		SceneNode* mNode ;
 		Monster mMonster ;
 		std::vector<String> mMonsterTemplates;
 

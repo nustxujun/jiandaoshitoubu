@@ -8,31 +8,36 @@ namespace JSB
 	class SceneNode
 	{
 		typedef std::vector<User*> UserList;
-		typedef std::map<String, SceneNode*> Children;
+		typedef std::set< SceneNode*> Children;
 	public:
 		typedef IteratorWrapper<UserList> Users;
 
 	public:
-		SceneNode(const String& name);
+		SceneNode();
 		~SceneNode();
 
 		void attachEntity(User* u);
 		void detachEntity(User* u);
+		
+		void attachScene(Scene* scene);
+		void detachScene();
+		Scene* getScene();
 
-		SceneNode* createChild(const String& name);
-		void destroyChild(const String& name);
-		SceneNode* getChild(const String& name);
+		SceneNode* createChild();
+		void destroyChild(SceneNode* node);
 
 		Users getUsers();
 		size_t getUserCount()const;
 
+		SceneNode* getParent();
+
 		void broadcast(DataStream& msg);
 
 	private:
-		String mName;
 		SceneNode* mParent;
 		UserList mUsers;
 		Children mChildren;
+		Scene* mScene;
 	};
 }
 

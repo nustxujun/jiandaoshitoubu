@@ -37,6 +37,7 @@ namespace JSB
 	class Resource;
 	class ResourceManager;
 
+	class Scene;
 	class SceneNode;
 	class Server;
 	class ServerEntity;

@@ -15,6 +15,11 @@ User::User(Identity id, SOCKET sock)
 	Triggers::generatorTriggers(&mSkillCont);
 }
 
+User::~User()
+{
+}
+
+
 Socket* User::getSocket()
 {
 	return &mSocket;

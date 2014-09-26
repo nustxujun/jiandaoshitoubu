@@ -8,7 +8,7 @@ namespace JSB
 	class Monster : public ServerEntity
 	{
 	public:
-		Monster();
+		Monster(SceneNode* node);
 
 		void serialize(DataStream& data);
 		void unserialize(DataStream& data);
@@ -16,6 +16,9 @@ namespace JSB
 		void useSkill(Environment& env);
 		void hurt(SkillEffectType type, int damage) ;
 
+		void broadcast(DataStream& msg);
+	private:
+		SceneNode* mNode;
 	};
 
 

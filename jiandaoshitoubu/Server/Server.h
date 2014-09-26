@@ -6,7 +6,7 @@
 #include "DataStream.h"
 #include "User.h"
 #include "EventManager.h"
-#include "Battle.h"
+#include "SceneNode.h"
 
 namespace JSB
 {
@@ -40,6 +40,10 @@ namespace JSB
 		void send(User* user, DataStream& msg);
 		void broadcast(DataStream& msg, User* without = nullptr);
 
+		void createScene(const String& name);
+		void destroyScene(const String& name);
+		Scene* getScene(const String& name);
+
 	private://event
 		void registerEvent();
 
@@ -64,7 +68,9 @@ namespace JSB
 
 		std::map<String, Mod*> mMods;
 
-		Battle mBattle;
+		SceneNode mNode;
+
+		std::map<String, Scene*> mScenes;
 
 		bool mStop = false;
 	};
